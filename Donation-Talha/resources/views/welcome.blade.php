@@ -727,8 +727,8 @@
                             </h3>
                             <ul class="links">
                                 <li><a href="#">Donate</a></li>
-                                <li><a href="#">Sponsor</a></li>
                                 <li><a href="#">Fundraise</a></li>
+                                <li><a href="#">Services</a></li>
                                 
                             </ul>
                         </div>

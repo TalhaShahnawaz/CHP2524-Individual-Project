@@ -13,7 +13,7 @@ class CreateNewsCommnetsTable extends Migration
      */
     public function up()
     {
-        Schema::create('news_commnets', function (Blueprint $table) {
+        Schema::create('news_comments', function (Blueprint $table) {
             $table->id();
             $table->longText('comment');
             $table->string('name');
@@ -30,6 +30,6 @@ class CreateNewsCommnetsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('news_commnets');
+        Schema::dropIfExists('news_comments');
     }
 }
