@@ -109,7 +109,7 @@
                         <a class="collapse-item" href="{{url('foodShow')}}">Food Donation</a>
                         <a class="collapse-item" href="{{url('bloodShow')}}">Blood Donation</a>
                         
-                        <a class="collapse-item" href="{{url('clothShow')}}">Clothe Donation</a>
+                        <a class="collapse-item" href="{{url('clothShow')}}">Cloth Donation</a>
                        
                         <a class="collapse-item" href="{{url('financialShow')}}">Financial Donation</a>
                     </div>

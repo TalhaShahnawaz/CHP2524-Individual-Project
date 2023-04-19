@@ -11,7 +11,7 @@ use App\Models\Approve_financila;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 
-class MakeDonation extends Controller
+class mentalwellbeing extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -20,7 +20,7 @@ class MakeDonation extends Controller
      */
     public function index()
     {
-        return view('makeDonation');
+        return view('mentalwellbeing');
     }
 
     // ALL DONATION PROFILE FUNCTION

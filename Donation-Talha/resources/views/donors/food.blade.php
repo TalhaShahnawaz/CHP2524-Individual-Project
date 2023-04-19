@@ -23,58 +23,15 @@
 
 <body>
 <body>
-    @if (Route::has('login'))
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-        @auth
-        
-        @if (Auth::check() && Auth::user()->role_id == 'admin')
-
-        <a href="{{ url('/adminProfile') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-        @endif
-        <form action="{{ url('/logout') }}" method="POST">
-    @csrf
-    <button type="submit" class="text-sm text-gray-700 dark:text-gray-500 underline">Logout</button>
-</form>        @else
-        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-        @if (Route::has('register'))
-        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-        @endif
-        @endauth
-    </div>
-    @endif
+    
 
     <header>
+         
         <div class="header-area ">
             <div class="header-top_area">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-xl-6 col-md-12 col-lg-8">
-                            
-                            
-                        </div>
-                        {{-- <a href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fa fa-pinterest-p"></i>
-                                    </a> --}}
-                        {{-- Login-to-dashboard --}}
-                        {{-- @if (Route::has('login'))
-                                        <div class="hidden fixed top-0 right-0 sm:block">
-                                            @auth
-                                            <a href="{{ url('/adminProfile') }}"
-                        class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                        @else
-                        <a href="{{ route('login') }}" class="text-sm mt-4 btn bg-green-400 btn-sm">Log
-                            in</a>
-
-                        @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="text-sm ml-3 mt-4 btn btn-info btn-sm">Register</a>
-                        @endif
-                        @endauth
-                    </div>
-                    @endif --}}
+                        
                 </div>
             </div>
         </div>
@@ -127,12 +84,37 @@
 
                                     
                                     
+                                    <li><a href="{{url('mentalwellbeing')}}">Mental Well-Being</a></li>
                                     <li><a href="/about">About</a></li>
+                                    <!-- -->
+                                    @if (Route::has('login'))
+                                
+                                    @auth
+                                    
+                                    @if (Auth::check() && Auth::user()->role_id == 'admin')
+
+                                    <li style="background-color: white;" ><a href="{{ url('/adminProfile') }}" style="color: black;">Dashboard</a></li>
+                                    @endif
+                                    <li style="background-color: white;"  <form action="{{ url('/logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="logout-btn">Logout</button>
+                                </form>    </li>    @else
+                            <li style="background-color: white;" > <a href="{{ route('login') }}" style="color: black;">Log in</a></li>
+
+                                    @if (Route::has('register'))
+                                    <li style="background-color: white;">
+                                        <a href="{{ route('register') }}" style="color: black;">Register</a>
+                                        </li>
+                                    @endif
+                                    @endauth
+                                
+                                @endif
+        <!-- -->
                                 </ul>
                             </nav>
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a href="{{url('makeDonation')}}">Make a Donation Now</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -208,32 +190,32 @@
                     @csrf 
                     <h2 class="fw-bold fs-4 mb-2">Please Select Your Distric To Donate</h2>
                     <div class="form-check-inline">
-                        <input type="checkbox" class="form-check-input" name="category[]" value="Manchester">
-                        <label class="form-check-label">Manchester</label>
+                        <input type="checkbox" class="form-check-input" name="category[]" value="Karachi Central">
+                        <label class="form-check-label">Karachi Central</label>
                     </div>
                     <div class="form-check-inline">
-                        <input type="checkbox" class="form-check-input" name="category[]" value="Oldham">
-                        <label class="form-check-label">Oldham</label>
+                        <input type="checkbox" class="form-check-input" name="category[]" value="Karachi East">
+                        <label class="form-check-label">Karachi East</label>
                     </div>
                     <div class="form-check-inline">
-                        <input type="checkbox" class="form-check-input" name="category[]" value="Rochdale">
-                        <label class="form-check-label">Rochdale</label>
+                        <input type="checkbox" class="form-check-input" name="category[]" value="Karachi South">
+                        <label class="form-check-label">Karachi South</label>
                     </div>
                     <div class="form-check-inline">
-                        <input type="checkbox" class="form-check-input" name="category[]" value="Sheffield">
-                        <label class="form-check-label">Sheffield</label>
+                        <input type="checkbox" class="form-check-input" name="category[]" value="Karachi West">
+                        <label class="form-check-label">Karachi West</label>
                     </div>
                     <div class="form-check-inline">
-                        <input type="checkbox" class="form-check-input" name="category[]" value="Barnsley">
-                        <label class="form-check-label">Barnsley</label>
+                        <input type="checkbox" class="form-check-input" name="category[]" value="Korangi">
+                        <label class="form-check-label">Korangi</label>
                     </div>
                     <div class="form-check-inline">
-                        <input type="checkbox" class="form-check-input" name="category[]" value="Bradford">
-                        <label class="form-check-label">Bradford</label>
+                        <input type="checkbox" class="form-check-input" name="category[]" value="Malir">
+                        <label class="form-check-label">Malir</label>
                     </div>
                     <div class="form-check-inline">
-                        <input type="checkbox" class="form-check-input" name="category[]" value="Leeds">
-                        <label class="form-check-label">Leeds</label>
+                        <input type="checkbox" class="form-check-input" name="category[]" value="Keamari">
+                        <label class="form-check-label">Keamari</label>
                     </div>
 
                 <div class="row my-4 d-flex justify-content-center">
@@ -250,7 +232,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-12">
                             <label class="form-label">Mobile Phone: </label>
-                                <input type="text" name="mobilePhone" class="form-control" ">
+                                <input type="number" name="mobilePhone" class="form-control" ">
                         </div>
                     </div>
 
@@ -278,7 +260,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-sm-12">
                             <label class="form-label">Post Code: </label>
-                                <input type="text" name="postCode" class="form-control">
+                                <input type="number" name="postCode" class="form-control">
                         </div>
                     </div>
 

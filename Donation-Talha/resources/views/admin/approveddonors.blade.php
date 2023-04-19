@@ -79,7 +79,7 @@
             <a class="collapse-item" href="{{url('foodShow')}}">Food Donation</a>
             <a class="collapse-item" href="{{url('bloodShow')}}">Blood Donation</a>
             
-            <a class="collapse-item" href="{{url('clothShow')}}">Clothe Donation</a>
+            <a class="collapse-item" href="{{url('clothShow')}}">Cloth Donation</a>
            
             <a class="collapse-item" href="{{url('financialShow')}}">Financial Donation</a>
         </div>
@@ -107,6 +107,7 @@
                     
 
         <h3>Blood Donors</h3>
+
             <table class="table table-light table-hover text-center">
                 <thead class="table-danger">
                     <tr>
@@ -133,13 +134,110 @@
                     @endforeach
                 </tbody>
             </table>
+            
+
+
+
+            <h3>Financial Donors</h3>
+
+<table class="table table-light table-hover text-center">
+    <thead class="table-dark">
+        <tr>
+            {{-- <th>Image</th> --}}
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($money as $moneys)
+        <tr>
+            {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
+            <td class="border-bottom-dark">{{$moneys->firstName}}</td>
+            <td class="border-bottom-dark">{{$moneys->lastName}}</td>
+            <td class="border-bottom-dark">{{$moneys->mobilePhone}}</td>
+            <td class="border-bottom-dark">{{$moneys->email}}</td>
+            <td class="border-bottom-dark">
+                <a href="{{url('/deleteapprovedfinancial',$moneys->id)}}" class="btn btn-dark btn-sm">Delete</a>
+            </td>
+        </tr>     
+        @endforeach
+    </tbody>
+</table>
+
+
+
+
+<h3>Food Donors</h3>
+
+<table class="table table-light table-hover text-center">
+    <thead class="table-primary">
+        <tr>
+            {{-- <th>Image</th> --}}
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($food as $foods)
+        <tr>
+            {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
+            <td class="border-bottom-primary">{{$foods->firstName}}</td>
+            <td class="border-bottom-primary">{{$foods->lastName}}</td>
+            <td class="border-bottom-primary">{{$foods->mobilePhone}}</td>
+            <td class="border-bottom-primary">{{$foods->email}}</td>
+            <td class="border-bottom-primary">
+                <a href="{{url('/deleteapprovedfood',$foods->id)}}" class="btn btn-primary btn-sm">Delete</a>
+            </td>
+        </tr>     
+        @endforeach
+    </tbody>
+</table>
+
+
+
+
+<h3>Cloth Donors</h3>
+
+<table class="table table-light table-hover text-center">
+    <thead class="table-info">
+        <tr>
+            {{-- <th>Image</th> --}}
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Phone</th>
+            <th>Email</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($cloth as $cloths)
+        <tr>
+            {{-- <td><img src="/storage/blog_images/{{$item->file}}" class="img-thumbnail rounded-pill" alt=""/></td> --}}
+            <td class="border-bottom-info">{{$cloths->firstName}}</td>
+            <td class="border-bottom-info">{{$cloths->lastName}}</td>
+            <td class="border-bottom-info">{{$cloths->mobilePhone}}</td>
+            <td class="border-bottom-info">{{$cloths->email}}</td>
+            <td class="border-bottom-info">
+                <a href="{{url('/deleteapprovedcloth',$cloths->id)}}" class="btn btn-info btn-sm">Delete</a>
+            </td>
+        </tr>     
+        @endforeach
+    </tbody>
+</table>
 
             @if (session()->has('message'))
                         <div class="alert alert-danger">
                             {{session('message')}}
                         </div>
                     @endif
-        </div> 
+        
+                </div> 
     </div>
     </div>
 </x-app-layout>

@@ -38,58 +38,15 @@
 </head>
 
 <body>
-    @if (Route::has('login'))
-    <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
-        @auth
-        
-        @if (Auth::check() && Auth::user()->role_id == 'admin')
-
-        <a href="{{ url('/adminProfile') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-        @endif
-        <form action="{{ url('/logout') }}" method="POST">
-    @csrf
-    <button type="submit" class="text-sm text-gray-700 dark:text-gray-500 underline">Logout</button>
-</form>        @else
-        <a href="{{ route('login') }}" class="text-sm text-gray-700 dark:text-gray-500 underline">Log in</a>
-
-        @if (Route::has('register'))
-        <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
-        @endif
-        @endauth
-    </div>
-    @endif
+    
 
     <header>
+         
         <div class="header-area ">
             <div class="header-top_area">
                 <div class="container-fluid">
                     <div class="row">
-                        <div class="col-xl-6 col-md-12 col-lg-8">
-                            
-                            
-                        </div>
-                        {{-- <a href="#">
-                                        <i class="fa fa-facebook"></i>
-                                    </a>
-                                    <a href="#">
-                                        <i class="fa fa-pinterest-p"></i>
-                                    </a> --}}
-                        {{-- Login-to-dashboard --}}
-                        {{-- @if (Route::has('login'))
-                                        <div class="hidden fixed top-0 right-0 sm:block">
-                                            @auth
-                                            <a href="{{ url('/adminProfile') }}"
-                        class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
-                        @else
-                        <a href="{{ route('login') }}" class="text-sm mt-4 btn bg-green-400 btn-sm">Log
-                            in</a>
-
-                        @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="text-sm ml-3 mt-4 btn btn-info btn-sm">Register</a>
-                        @endif
-                        @endauth
-                    </div>
-                    @endif --}}
+                        
                 </div>
             </div>
         </div>
@@ -142,12 +99,37 @@
 
                                     
                                     
+                                    <li><a href="{{url('mentalwellbeing')}}">Mental Well-Being</a></li>
                                     <li><a href="/about">About</a></li>
+                                    <!-- -->
+                                    @if (Route::has('login'))
+                                
+                                    @auth
+                                    
+                                    @if (Auth::check() && Auth::user()->role_id == 'admin')
+
+                                    <li style="background-color: white;" ><a href="{{ url('/adminProfile') }}" style="color: black;">Dashboard</a></li>
+                                    @endif
+                                    <li style="background-color: white;"  <form action="{{ url('/logout') }}" method="POST">
+                                @csrf
+                                <button type="submit" class="logout-btn">Logout</button>
+                                </form>    </li>    @else
+                            <li style="background-color: white;" > <a href="{{ route('login') }}" style="color: black;">Log in</a></li>
+
+                                    @if (Route::has('register'))
+                                    <li style="background-color: white;">
+                                        <a href="{{ route('register') }}" style="color: black;">Register</a>
+                                        </li>
+                                    @endif
+                                    @endauth
+                                
+                                @endif
+        <!-- -->
                                 </ul>
                             </nav>
                             <div class="Appointment">
                                 <div class="book_btn d-none d-lg-block">
-                                    <a href="{{url('makeDonation')}}">Make a Donation Now</a>
+                                    
                                 </div>
                             </div>
                         </div>
@@ -207,33 +189,102 @@
         var map = new mapboxgl.Map({
             container: 'map',
             style: 'mapbox://styles/mapbox/streets-v11',
-            center: [-1.797, 53.642],
-            zoom: 8
+            center: [67.0898699,24.8907091],
+            zoom: 10
         });
         map.on('click', 'hospitals', function (e) {
             var clinic = e.features[0].properties.name;
             document.getElementById('clinic').value = clinic;
         });
         var hospitals = [
+            
             {
-                name: 'Huddersfield Royal Infirmary',
-                location: [-1.8156964868897674, 53.65540242144038]
+            name: 'Pns Shifa Hospital',
+            location: [67.0661589945045, 24.802033939939157]
             },
             {
-                name: 'Calderdale Royal Hospital',
-                location: [-1.8583089177739405, 53.70772792444424]
+            name: 'Shahrah-e-Firdousi Hospital',
+            location: [67.02830591395774, 24.825456474440294]
             },
             {
-                name: 'Dewsbury and District Hospital',
-                location: [-1.65042327626675, 53.71013059315998]
+            name: 'Altamash General Hospital',
+            location: [67.00290003057671, 24.822963676198313]
             },
             {
-                name: 'St. Luke’s Hospital',
-                location: [-1.76309164712977, 53.79092631026062]
+            name: 'Dr. Ziauddin Hospital Clifton Campus',
+            location: [67.00680363920826, 24.82277228050994]
             },
             {
-                name: 'Bradford Royal Infirmary',
-                location: [-1.79904963739249, 53.8168802176168] 
+            name: 'Chiniot General Hospital',
+            location: [67.14483299521851, 24.83112082076502]
+            },
+            {
+            name: 'Kharadar General Hospital',
+            location: [66.99545495795219, 24.86175216258727]
+            },
+            {
+            name: 'Al Shafi Hospital',
+            location: [67.00513162731922, 24.87537976707921]
+            },
+            {
+            name: 'Bagh E Halar General Hospital',
+            location: [67.01886453725491, 24.88970659904993]
+            },
+            {
+            name: 'Patni Relief Hospital',
+            location: [66.9701127069832, 24.9133733755799]
+            },
+            {
+            name: 'Naz General Hospital',
+            location: [66.99895181784815, 24.94512954539923]
+            },
+            {
+            name: 'Osmania General Hospital',
+            location: [67.05457010432289, 24.897803638468076]
+            },
+            {
+            name: 'The Hospital, Shah Faisal Colony',
+            location: [67.1445206650964, 24.896557975168857]
+            },
+            {
+            name: 'Star General Hospital',
+            location: [67.16923990448038, 24.892820908514008]
+            },
+            {
+            name: 'Hassan General Hospital',
+            location: [67.18983926938391, 24.887215096127644]
+            },
+            {
+            name: 'Sindh Medical Centre',
+            location: [67.20219888832604, 24.912750624484495]
+            },
+            {
+            name: 'Memon Medical Institute Hospital',
+            location: [67.14633585103321, 24.94790761561032]
+            },
+            {
+            name: 'Gulistan-e-Johar Hospital',
+            location: [67.13169002736534, 24.92830336071048]
+            },
+            {
+            name: 'Dr Yasmeen Taufeeq Hospital',
+            location: [67.10286332851757, 24.951069300147445]
+            },
+            {
+            name: 'Rajput General Hospital',
+            location: [67.10077106811734, 24.943691910145024]
+            },
+            {
+            name: 'Patel Hospital',
+            location: [67.09728396745027, 24.937578880850207]
+            },
+            {
+            name: 'The Aga Khan University Hospital',
+            location: [67.109756, 24.893707]
+            },
+            {
+                name: 'Jinnah Postgraduate Medical Center',
+                location: [67.04410584712846, 24.85365490906637] 
             }
             // add more hospitals here
         ];
@@ -248,6 +299,24 @@
                 .setHTML('<h3>' + hospital.name + '</h3>'))
                 .addTo(map);
         });
+                    if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position) {
+                var userLocation = [position.coords.longitude, position.coords.latitude];
+                map.setCenter(userLocation);
+                var e2 = document.createElement('div');
+                
+                e2.className = 'marker_y';
+                
+                new mapboxgl.Marker(e2)
+                .setLngLat(userLocation)
+                .setPopup(new mapboxgl.Popup({ offset: 25 })
+                .setHTML('<h3>You are here!</h3>'))
+                
+                .addTo(map);
+                
+            });
+ 
+}
     </script>
 
 </div>          
@@ -278,7 +347,7 @@
                             <div class="row d-flex justify-content-center">
                                 <div class="col-sm-12">
                                     <label for="mobilePhone" class="form-label">Mobile Phone: </label>
-                                        <input type="text" name="mobilePhone" class="form-control">
+                                        <input type="number" name="mobilePhone" class="form-control">
                                 </div>
                             </div>
 
@@ -303,21 +372,38 @@
                                 </div>
                                 <div class="col-sm-12">
                                     <label for="postCode" class="form-label">Post Code: </label>
-                                        <input type="text" name="postCode" class="form-control">
+                                        <input type="number" name="postCode" class="form-control">
                                 </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">
-                                <div class="col-sm-12">
-                                    <label for="clinic" class="form-label">Select The Nearest Hospital: </label>
-                                    <select id="clinic" name="clinic" class="form-control">
-                                    <option value="Huddersfield Royal Infirmary">Huddersfield Royal Infirmary</option>
-                                    <option value="Calderdale Royal Hospital">Calderdale Royal Hospital</option>
-                                    <option value="Dewsbury and District Hospital">Dewsbury and District Hospital</option>
-                                    <option value="St. Luke’s Hospital">St. Luke’s Hospital</option>
-                                    <option value="Bradford Royal Infirmary">Bradford Royal Infirmary</option>
-                                    </select>
-                                </div>
+                            <div class="col-sm-12">
+                            <label for="clinic" class="form-label">Select The Nearest Hospital: </label>
+                            <select id="clinic" name="clinic" class="form-control">
+                                <option value="Pns Shifa Hospital">Pns Shifa Hospital</option>
+                                <option value="Shahrah-e-Firdousi Hospital">Shahrah-e-Firdousi Hospital</option>
+                                <option value="Altamash General Hospital">Altamash General Hospital</option>
+                                <option value="Dr. Ziauddin Hospital Clifton Campus">Dr. Ziauddin Hospital Clifton Campus</option>
+                                <option value="Chiniot General Hospital">Chiniot General Hospital</option>
+                                <option value="Kharadar General Hospital">Kharadar General Hospital</option>
+                                <option value="Al Shafi Hospital">Al Shafi Hospital</option>
+                                <option value="Bagh E Halar General Hospital">Bagh E Halar General Hospital</option>
+                                <option value="Patni Relief Hospital">Patni Relief Hospital</option>
+                                <option value="Naz General Hospital">Naz General Hospital</option>
+                                <option value="Osmania General Hospital">Osmania General Hospital</option>
+                                <option value="The Hospital, Shah Faisal Colony">The Hospital, Shah Faisal Colony</option>
+                                <option value="Star General Hospital">Star General Hospital</option>
+                                <option value="Hassan General Hospital">Hassan General Hospital</option>
+                                <option value="Sindh Medical Centre">Sindh Medical Centre</option>
+                                <option value="Memon Medical Institute Hospital">Memon Medical Institute Hospital</option>
+                                <option value="Gulistan-e-Johar Hospital">Gulistan-e-Johar Hospital</option>
+                                <option value="Dr Yasmeen Taufeeq Hospital">Dr Yasmeen Taufeeq Hospital</option>
+                                <option value="Rajput General Hospital">Rajput General Hospital</option>
+                                <option value="Patel Hospital">Patel Hospital</option>
+                                <option value="The Aga Khan University Hospital">The Aga Khan University Hospital</option>
+                                <option value="Jinnah Postgraduate Medical Center">Jinnah Postgraduate Medical Center</option>
+                            </select>
+                        </div>
                             </div>
 
                             <div class="row d-flex justify-content-center">

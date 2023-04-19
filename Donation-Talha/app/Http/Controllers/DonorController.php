@@ -35,9 +35,40 @@ class DonorController extends Controller
         $money = Approve_financila::all();
         $food = Approve_food::all();
         $cloth = Approve_cloth::all();
-        return view('admin.approveddonors',['blood'=>$blood],['money'=>$money],['food'=>$food],['cloth'=>$cloth]);
+        return view('admin.approveddonors',['blood' => $blood,
+        'money' => $money,
+        'food' => $food,
+        'cloth' => $cloth]);
     }
     
+
+    public function destroyapproved_blood($id)
+    {
+        $patient = Approve_blood::destroy($id);
+
+        return redirect('/approveddonors')->with('message','Updated Sucessfully');
+    }
+
+    public function destroyapproved_financial($id)
+    {
+        $patient = Approve_financila::destroy($id);
+
+        return redirect('/approveddonors')->with('message','Updated Sucessfully');
+    }
+
+    public function destroyapproved_food($id)
+    {
+        $patient = Approve_food::destroy($id);
+
+        return redirect('/approveddonors')->with('message','Updated Sucessfully');
+    }
+
+    public function destroyapproved_cloth($id)
+    {
+        $patient = Approve_cloth::destroy($id);
+
+        return redirect('/approveddonors')->with('message','Updated Sucessfully');
+    }
     /**
      * Store a newly created resource in storage.
      *

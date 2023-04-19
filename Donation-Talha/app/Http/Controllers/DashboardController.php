@@ -19,7 +19,7 @@ class DashboardController extends Controller
             return view('Patient.PatientDashboard');
         }
         elseif(Auth::user()->hasRole('admin')){
-            return view('admin.adminDashboard');
+            return view('admin.adminProfile');
 
         }
     }

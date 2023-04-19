@@ -15,7 +15,7 @@ use App\Http\Controllers\FoodController;
 use App\Http\Controllers\PatientController;
 
 use App\Http\Controllers\HelpAreaController;
-use App\Http\Controllers\MakeDonation;
+use App\Http\Controllers\mentalwellbeing;
 
 use App\Http\Controllers\NewsCommnetController;
 use App\Http\Controllers\OrgProfileController;
@@ -63,20 +63,23 @@ Route::get('/destroy_patient',[PatientController::class,'destroypatient']);
 
 
 Route::get('/approveddonors',[DonorController::class,'approveddonorsShow']);
-Route::get('/deleteapproveddonors/{id}',[PatientController::class,'destroyapproved_patient']);
+Route::get('/deleteapprovedblood/{id}',[DonorController::class,'destroyapproved_blood']);
+Route::get('/deleteapprovedfinancial/{id}',[DonorController::class,'destroyapproved_financial']);
+Route::get('/deleteapprovedfood/{id}',[DonorController::class,'destroyapproved_food']);
+Route::get('/deleteapprovedcloth/{id}',[DonorController::class,'destroyapproved_cloth']);
 
 // Route for Make Donation
-Route::get('makeDonation',[MakeDonation::class,'index']);
-Route::get('foodDonate',[MakeDonation::class,'food']);
-Route::get('bloodDonate',[MakeDonation::class,'blood']);
-Route::get('clothDonate',[MakeDonation::class,'cloth']);
-Route::get('financialDonate',[MakeDonation::class,'financial']);
-Route::get('/foodProfile/{id}',[MakeDonation::class,'profile']);
-Route::get('/bloodProfile/{id}',[MakeDonation::class,'blood_profile']);
-Route::get('/clothProfile/{id}',[MakeDonation::class,'cloth_profile']);
+Route::get('mentalwellbeing',[mentalwellbeing::class,'index']);
+Route::get('foodDonate',[mentalwellbeing::class,'food']);
+Route::get('bloodDonate',[mentalwellbeing::class,'blood']);
+Route::get('clothDonate',[mentalwellbeing::class,'cloth']);
+Route::get('financialDonate',[mentalwellbeing::class,'financial']);
+Route::get('/foodProfile/{id}',[mentalwellbeing::class,'profile']);
+Route::get('/bloodProfile/{id}',[mentalwellbeing::class,'blood_profile']);
+Route::get('/clothProfile/{id}',[mentalwellbeing::class,'cloth_profile']);
 
 
-Route::get('/financialProfile/{id}',[MakeDonation::class,'financial_profile']);
+Route::get('/financialProfile/{id}',[mentalwellbeing::class,'financial_profile']);
 
 
 
