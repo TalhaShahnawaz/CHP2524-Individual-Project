@@ -32,13 +32,18 @@
 
             <!-- Nav Item - Pages Collapse Menu -->
 
-            <li class="nav-item">                  
+             <li class="nav-item">                  
                 <a class="nav-link" href="{{url('/')}}">
                     <i class="fas fa-fw fa-folder"></i>
                     <span>Home</span>
                 </a>
             </li>
-
+            <li class="nav-item">                  
+                <a class="nav-link" href="{{url('/mentalwellbeingdata')}}">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Mental Wellbeing</span>
+                </a>
+            </li>
             <li class="nav-item">                  
                 <a class="nav-link" href="{{url('/reguser')}}">
                     <i class="fas fa-fw fa-folder"></i>

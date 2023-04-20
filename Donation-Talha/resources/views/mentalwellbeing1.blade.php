@@ -228,53 +228,43 @@
 
     <div class="container">
     <div class="section_title text-center mb-55">
-                        <h3><span>Choose One of Our Services</span></h3>
+                        <h3><span>Please Fill this Form</span></h3>
                     </div>
-                    </div>
-  <!-- reson_area_start  -->
-  <div class="reson_area section_padding">
-        <div class="container-2">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    
-                </div>
-            </div>
-            <div class="row justify-content-center">
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_reson">
-                        <div class="thum">
-                            <div class="thum_1">
-                                <img src="img/help/1.png" alt="">
-                            </div>
-                        </div>
-                        <div class="help_content">
-                            <h4>Need a Session Now?</h4>
-                            <p>Please submit basic info via form and we will get to you within 15 minutes</p>
-                                <a href="/mentalwellbeing1" class="boxed-btn3">Start Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="single_reson">
-                        <div class="thum">
-                            <div class="thum_1">
-                                <img src="img/help/2.png" alt="">
-                            </div>
-                        </div>
-                        <div class="help_content">
-                            <h4>Mental Helth Test</h4>
-                            <p>If you don't know about your situation take a breif evaluation test to estimate your situation</p>
-                                <a href="https://www.psycom.net/depression-test" class="boxed-btn3">Start Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-        </div>
+                    @if (session('success'))
+    <div class="alert alert-success">
+        {{ session('success') }}
     </div>
-    <!-- reson_area_end  -->
+@endif
+                    <form action="{{ route('form.submit') }}" method="POST">
+  @csrf
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" name="name" placeholder="Enter your name">
+  </div>
+  <div class="form-group">
+    <label for="email">Email address</label>
+    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="mobile">Mobile Number</label>
+    <input type="number" class="form-control" id="mobile" name="mobile" placeholder="Enter your mobile number">
+  </div>
+  <div class="form-group">
+    <label for="emergency_mobile">Emergency Mobile Number</label>
+    <input type="number" class="form-control" id="emergency_mobile" name="emergency_mobile" placeholder="Enter emergency mobile number">
+  </div>
+  <div class="form-group">
+    <label for="current_location">Current Location</label>
+    <input type="text" class="form-control" id="current_location" name="current_location" placeholder="Enter your current location">
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea class="form-control" id="message" name="message" placeholder="Enter your message"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+                    </div>
+ 
 <div class="container">
 
                     <section class="help">

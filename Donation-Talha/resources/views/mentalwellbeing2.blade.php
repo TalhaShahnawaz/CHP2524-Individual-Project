@@ -228,7 +228,7 @@
 
     <div class="container">
     <div class="section_title text-center mb-55">
-                        <h3><span>Choose One of Our Services</span></h3>
+                        <h3><span>Pleasxfgfhis Form</span></h3>
                     </div>
                     </div>
   <!-- reson_area_start  -->
@@ -250,7 +250,7 @@
                         <div class="help_content">
                             <h4>Need a Session Now?</h4>
                             <p>Please submit basic info via form and we will get to you within 15 minutes</p>
-                                <a href="/mentalwellbeing1" class="boxed-btn3">Start Now
+                                <a href="/about" class="boxed-btn3">Start Now
                             </a>
                         </div>
                     </div>
@@ -270,7 +270,21 @@
                         </div>
                     </div>
                 </div>
-               
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_reson">
+                        <div class="thum">
+                            <div class="thum_1">
+                                <img src="img/help/3.png" alt="">
+                            </div>
+                        </div>
+                        <div class="help_content">
+                            <h4>Standard Procedure</h4>
+                            <p>Take your time to fill a detailed form, tha will be evaluated by our experts panel and will get back to you within 48 hrs</p>
+                                <a href="/about" class="boxed-btn3">Start Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

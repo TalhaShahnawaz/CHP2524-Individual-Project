@@ -105,23 +105,25 @@
             <table class="table table-light table-hover text-center">
                 <thead class="table-dark">
                     <tr>
-                        <th>First Name</th>
-                        <th>Last Name</th>
+                        <th>Name</th>
                         <th>E-mail</th>
-                        <th>Subscription Date</th>
+                        <th>Mobile</th>
+                        <th>Emergency Contact</th>
+                        <th>Location</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($subs as $sub)
+                    @foreach ($mdata as $datas)
                     <tr>
-                        <td class="border-bottom-primary">{{$sub->subFirst}}</td>
-                        <td class="border-bottom-primary">{{$sub->subLast}}</td>
-                        <td class="border-bottom-primary">{{$sub->subEmail}}</td>
-                        <td class="border-bottom-primary">{{$sub->created_at}}</td>
+                        <td class="border-bottom-primary">{{$datas->name}}</td>
+                        <td class="border-bottom-primary">{{$datas->email}}</td>
+                        <td class="border-bottom-primary">{{$datas->mobile}}</td>
+                        <td class="border-bottom-primary">{{$datas->emergency_mobile}}</td>
+                        <td class="border-bottom-primary">{{$datas->current_location}}</td>
                         <td class="border-bottom-primary">
                             <a href="#" class="btn btn-info btn-sm">Sent Mail</a>
-                            <a href="{{url('/destroy', $sub->id)}}" class="btn btn-danger btn-sm">Delete</a>
+                            <a href="{{url('/destroym', $datas->id)}}" class="btn btn-danger btn-sm">Delete</a>
                         </td>
                     </tr>
                     @endforeach

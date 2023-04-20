@@ -27,7 +27,12 @@
                     <span>Home</span>
                 </a>
             </li>
-
+            <li class="nav-item">                  
+                <a class="nav-link" href="{{url('/mentalwellbeingdata')}}">
+                    <i class="fas fa-fw fa-folder"></i>
+                    <span>Mental Wellbeing</span>
+                </a>
+            </li>
             <li class="nav-item">                  
                 <a class="nav-link" href="{{url('/reguser')}}">
                     <i class="fas fa-fw fa-folder"></i>
@@ -78,7 +83,7 @@
                         <a class="collapse-item" href="{{url('foodShow')}}">Food Donation</a>
                         <a class="collapse-item" href="{{url('bloodShow')}}">Blood Donation</a>
                         
-                        <a class="collapse-item" href="{{url('clothShow')}}">Cloth Donation</a>
+                        <a class="collapse-item" href="{{url('clothShow')}}">ClothDonation</a>
                        
                         <a class="collapse-item" href="{{url('financialShow')}}">Financial Donation</a>
                     </div>

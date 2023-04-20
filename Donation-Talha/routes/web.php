@@ -16,6 +16,8 @@ use App\Http\Controllers\PatientController;
 
 use App\Http\Controllers\HelpAreaController;
 use App\Http\Controllers\mentalwellbeing;
+use App\Http\Controllers\MentalFormSubmissionController;
+use App\Http\Controllers\MentalData;
 
 use App\Http\Controllers\NewsCommnetController;
 use App\Http\Controllers\OrgProfileController;
@@ -61,6 +63,12 @@ Route::post('/patientEdit',[PatientController::class,'approve']);
 Route::get('/destroy_patient/{id}',[PatientController::class,'destroypatient']);
 Route::get('/destroy_patient',[PatientController::class,'destroypatient']);
 
+Route::post('/submit-mentalform', [MentalFormSubmissionController::class, 'store'])->name('form.submit');
+
+
+Route::get('/form-success', function () {
+    return view('form-success');
+})->name('form-success');
 
 Route::get('/approveddonors',[DonorController::class,'approveddonorsShow']);
 Route::get('/deleteapprovedblood/{id}',[DonorController::class,'destroyapproved_blood']);
@@ -70,6 +78,10 @@ Route::get('/deleteapprovedcloth/{id}',[DonorController::class,'destroyapproved_
 
 // Route for Make Donation
 Route::get('mentalwellbeing',[mentalwellbeing::class,'index']);
+Route::get('mentalwellbeing1',[mentalwellbeing::class,'index1']);
+Route::get('/mentalwellbeing1',[mentalwellbeing::class,'index1']);
+
+Route::get('mentalwellbeing2',[mentalwellbeing::class,'index2']);
 Route::get('foodDonate',[mentalwellbeing::class,'food']);
 Route::get('bloodDonate',[mentalwellbeing::class,'blood']);
 Route::get('clothDonate',[mentalwellbeing::class,'cloth']);
@@ -153,6 +165,12 @@ Route::view('/subscription', 'admin.subscription');
 Route::get('/subscription',[SubscripController::class,'index']);
 Route::post('/',[SubscripController::class,'create']);
 Route::get('/destroy/{id}',[SubscripController::class,'destroy']);
+
+// Route for Mental
+Route::view('/mentalwellbeingdata', 'admin.mentalwellbeingdata');
+Route::get('/mentalwellbeingdata',[MentalData::class,'index']);
+Route::post('/',[MentalData::class,'create']);
+Route::get('/destroym/{id}',[MentalData::class,'destroy']);
 
 // Route for Food-Dashboard 
 // Route::view('foodShow','admin.foodShow');

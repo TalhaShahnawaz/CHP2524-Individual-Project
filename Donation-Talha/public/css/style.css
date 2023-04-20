@@ -13,6 +13,173 @@
   justify-content: start;
 }
 
+.cases {
+  background-color: #fff;
+  overflow: hidden;
+  padding-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cases__content {
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  color: #838994;
+}
+
+.cases__content>h2 {
+  font-size: 5rem;
+  margin: 1.625rem 0 4.125rem;
+  margin-left: 6rem;
+  font-weight: 200;
+  align-self: center;
+}
+
+.cases__devices {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+}
+
+.cases__devices>li {
+  justify-content: space-between;
+  display: flex;
+  flex-direction: column;
+}
+
+.cases__devices>li:not(:last-child) {
+  margin-right: 19rem;
+}
+
+.cases__img {
+  width: 170px;
+  height: 160px;
+  align-self: center;
+}
+
+.cases__caption>h3 {
+  color: black;
+  font-weight: 400;
+  font-size: 2.563rem;
+  margin: 2.5rem 0px 1.875rem;
+  text-align: center;
+}
+
+.get-karma {
+  display: flex;
+  flex-direction: row;
+  margin: 123px 0px;
+}
+.help {
+  background-color: #f7f7f7;
+  padding: 50px;
+  text-align: center;
+}
+
+.help h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.help-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.help-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.help-list li {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.help-contact {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.expect {
+  padding: 50px;
+  text-align: center;
+}
+
+.expect h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.expect-text {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.expect-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.expect-list li {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.expect-goal {
+  font-size: 18px;
+  margin-top: 20px;
+}
+
+.wrapper {
+  margin-top: 5rem;
+  margin-bottom: 5rem;
+  background-color: #e0e7ff;
+  }
+  
+  .tips {
+    padding: 2rem;
+  }
+    
+  .tips__content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+    
+  .tips__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .tips__box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .tips__image {
+    max-width: 100%;
+  height: 200px;
+  }
+  
+  .tips__caption {
+    margin-top: 10px;
+    text-align: center;
+  }
+
+
+
 /* line 13, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_extend.scss */
 .overlay::before {
   background-image: -moz-linear-gradient(0deg, rgba(0, 28, 100, 0.8) 21%, rgba(0, 28, 100, 0.8) 22%, rgba(0, 53, 187, 0.3) 100%, #0035bb 100%);
@@ -1420,7 +1587,45 @@ h3 {
   color: #222222;
   margin-right: 12px;
 }
+.container-2 {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.basic-info-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
+.basic-info-form label {
+  margin-bottom: 0.5rem;
+}
+
+.basic-info-form input,
+.basic-info-form textarea {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.25rem;
+  border: none;
+  width: 100%;
+}
+
+.basic-info-form button {
+  padding: 0.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.basic-info-form button:hover {
+  background-color: #0069d9;
+}
 /* line 244, ../../Arafath/CL/january 2020/242. charity/HTML/scss/_header.scss */
 .header-area .header-top_area .social_media_links a:hover {
   color: #3CC78F;
@@ -6853,5 +7058,6 @@ h6 {
   margin-right: 10px;
   font-size: 12px;
 }
+
 
 /*# sourceMappingURL=style.css.map */

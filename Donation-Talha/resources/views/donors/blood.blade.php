@@ -148,7 +148,7 @@
                                 When They Need</h3>
                             <p>With so much to consume and such little time, coming up <br>
                                 with relevant title ideas is essential</p>
-                            <a href="#" class="boxed-btn3">Learn More
+                            <a href="/about" class="boxed-btn3">Learn More
                             </a>
                         </div>
                     </div>

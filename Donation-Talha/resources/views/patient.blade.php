@@ -154,7 +154,7 @@
                             <span>Patient Menu</span>
                             <h3>Find the Donated Blood closest to You</h3>
                             <p>With having Blood in Multiple Hospitals we makesure it reaches the Most</p>
-                            <a href="#" class="boxed-btn3">Learn More
+                            <a href="/about" class="boxed-btn3">Learn More
                             </a>
                         </div>
                     </div>

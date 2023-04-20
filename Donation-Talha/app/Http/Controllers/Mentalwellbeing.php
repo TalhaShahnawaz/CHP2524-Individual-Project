@@ -23,6 +23,16 @@ class mentalwellbeing extends Controller
         return view('mentalwellbeing');
     }
 
+    public function index1()
+    {
+        return view('mentalwellbeing1');
+    }
+
+    public function index2()
+    {
+        return view('mentalwellbeing2');
+    }
+
     // ALL DONATION PROFILE FUNCTION
     public function food()
     {
