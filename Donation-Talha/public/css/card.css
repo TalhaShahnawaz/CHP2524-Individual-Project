@@ -1,5 +1,5 @@
 :root {
-    --gradient: linear-gradient(to left top, #3CC78F 10%, #65ecbf 90%) !important;
+    --gradient: linear-gradient(to left top, #8d00ff 10%, #65ecbf 90%) !important;
   }
   
   body {
@@ -8,7 +8,7 @@
   
   .card {
     background: #FFFFFF;
-    border: 1px solid #3CC78F;
+    border: 1px solid #8d00ff;
     color: rgba(250, 250, 250, 0.8);
     margin-bottom: 2rem;
   }

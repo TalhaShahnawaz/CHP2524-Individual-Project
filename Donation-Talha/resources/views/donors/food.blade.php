@@ -39,12 +39,13 @@
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-3">
-                        <div class="logo">
-                            <a href="{{url('/')}}">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div>
+  <div class="logo">
+    <a href="{{url('/')}}">
+      <img src="img/logo.png" alt="" style="display: inline-block; vertical-align: middle;">
+      <span style="display: inline-block; vertical-align: middle; " class="logo-t">VitalShare</span>
+    </a>
+  </div>
+</div>
                     <div class="col-xl-9 col-lg-9">
                         <div class="main-menu">
                             <nav>
@@ -86,24 +87,26 @@
                                     
                                     <li><a href="{{url('mentalwellbeing')}}">Mental Well-Being</a></li>
                                     <li><a href="/about">About</a></li>
-                                    <!-- -->
+                                     <!-- -->
                                     @if (Route::has('login'))
                                 
                                     @auth
                                     
                                     @if (Auth::check() && Auth::user()->role_id == 'admin')
 
-                                    <li style="background-color: white;" ><a href="{{ url('/adminProfile') }}" style="color: black;">Dashboard</a></li>
+                                    <li style="background-color: white; border-radius: 25px;;" ><a href="{{ url('/adminProfile') }}" style="color: black; border-radius: 25px; display: block; padding: 10px">Dashboard</a></li>
                                     @endif
-                                    <li style="background-color: white;"  <form action="{{ url('/logout') }}" method="POST">
+                                    <li style="background-color: white; border-radius: 25px;;" > <form action="{{ url('/logout') }}" method="POST" >
                                 @csrf
                                 <button type="submit" class="logout-btn">Logout</button>
-                                </form>    </li>    @else
-                            <li style="background-color: white;" > <a href="{{ route('login') }}" style="color: black;">Log in</a></li>
+                                </form>        @else
+                                <li style="background-color: white; border-radius: 25px;">
+                                <a href="{{ route('login') }}" style="color: black; border-radius: 25px; display: block; padding: 10px;">Log in</a>
+                                </li>
 
                                     @if (Route::has('register'))
-                                    <li style="background-color: white;">
-                                        <a href="{{ route('register') }}" style="color: black;">Register</a>
+                                    <li style="background-color: white; border-radius: 25px;">
+                                        <a href="{{ route('register') }}" style="color: black; border-radius: 25px; display: block; padding: 10px;">Register</a>
                                         </li>
                                     @endif
                                     @endauth
@@ -136,11 +139,11 @@
                 <div class="row">
                     <div class="col-lg-9">
                         <div class="slider_text ">
-                            <span>Get Started Today.</span>
-                            <h3> Help the children
+                            <span>Help Someone Now</span>
+                            <h3> Feed the Needy,
                                 When They Need</h3>
-                            <p>With so much to consume and such little time, coming up <br>
-                                with relevant title ideas is essential</p>
+                            <p>With so much to consume and such high prices <br>
+                                , Feed those who can't feed themselves</p>
                             <a href="/about" class="boxed-btn3">Learn More
                             </a>
                         </div>
@@ -154,15 +157,9 @@
         <div class="row bg-green-200 my-5 p-5">
             <div class="col-md-6 ">
                 <h1 class="text-size">Donate Food</h1>
-                <p class="fw-light fs-5">How swiftly the world market for food can change could be observed in the
-                    mid-2000s. For two decades, leading up to the millennium, global demand for food had increased
-                    steadily, along with growth in the world’s population, record harvests, new technologies,
-                    improvements in incomes, and the diversification of diets. Food prices continued to decline through
-                    2000. However, in 2004, prices for most grains began to rise. Rising production could not keep pace
-                    with the even stronger growth in demand. Food stocks became depleted. And then, in 2005, food supply
-                    was squeezed by disappointing harvests in major food-producing countries. By 2006, world cereal
-                    production had fallen by 2.1 per cent. In 2007, rapid increases in oil prices increased fertilizer
-                    and other food production costs.
+                <p class="fw-light fs-5">Food insecurity is a significant issue in Pakistan, with millions of people struggling to access basic nutrition on a daily basis. If you are looking to help those in need, consider making a food donation to a reputable organization that provides aid to underserved communities across the country.
+
+Your food donation can help alleviate hunger and malnutrition, particularly among vulnerable groups such as children and the elderly. Donating non-perishable items such as rice, lentils, canned goods, and cooking oil can go a long way in ensuring that families have access to nutritious meals.
                 </p>
             </div>
             <div class="col-md-6">

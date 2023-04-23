@@ -40,12 +40,13 @@
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-3">
-                        <div class="logo">
-                            <a href="{{url('/')}}">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div>
+  <div class="logo">
+    <a href="{{url('/')}}">
+      <img src="img/logo.png" alt="" style="display: inline-block; vertical-align: middle;">
+      <span style="display: inline-block; vertical-align: middle; " class="logo-t">VitalShare</span>
+    </a>
+  </div>
+</div>
                     <div class="col-xl-9 col-lg-9">
                         <div class="main-menu">
                             <nav>
@@ -87,24 +88,26 @@
                                     
                                     <li><a href="{{url('mentalwellbeing')}}">Mental Well-Being</a></li>
                                     <li><a href="/about">About</a></li>
-                                    <!-- -->
+                                     <!-- -->
                                     @if (Route::has('login'))
                                 
                                     @auth
                                     
                                     @if (Auth::check() && Auth::user()->role_id == 'admin')
 
-                                    <li style="background-color: white;" ><a href="{{ url('/adminProfile') }}" style="color: black;">Dashboard</a></li>
+                                    <li style="background-color: white; border-radius: 25px;;" ><a href="{{ url('/adminProfile') }}" style="color: black; border-radius: 25px; display: block; padding: 10px">Dashboard</a></li>
                                     @endif
-                                    <li style="background-color: white;"  <form action="{{ url('/logout') }}" method="POST">
+                                    <li style="background-color: white; border-radius: 25px;;" > <form action="{{ url('/logout') }}" method="POST" >
                                 @csrf
                                 <button type="submit" class="logout-btn">Logout</button>
-                                </form>    </li>    @else
-                            <li style="background-color: white;" > <a href="{{ route('login') }}" style="color: black;">Log in</a></li>
+                                </form>        @else
+                                <li style="background-color: white; border-radius: 25px;">
+                                <a href="{{ route('login') }}" style="color: black; border-radius: 25px; display: block; padding: 10px;">Log in</a>
+                                </li>
 
                                     @if (Route::has('register'))
-                                    <li style="background-color: white;">
-                                        <a href="{{ route('register') }}" style="color: black;">Register</a>
+                                    <li style="background-color: white; border-radius: 25px;">
+                                        <a href="{{ route('register') }}" style="color: black; border-radius: 25px; display: block; padding: 10px;">Register</a>
                                         </li>
                                     @endif
                                     @endauth
@@ -143,24 +146,10 @@
             <div class="col-md-6 ">
                 <h1 class="text-size">Donate Cloth</h1>
                 <p class="fw-light fs-5">
-                    One of the most important reasons to donate clothes is how many people it helps. It helps those who
-                    can’t afford clothes, disaster victims, veterans, and even people with diseases. When you donate to
-                    a charity that not only brings the clothes to a thrift shop but then turns that clothing donation
-                    into a monetary donation, you’re helping a wide array of people in need.
-
-                    When you key in on all the different people that your donations help, then that’s an easy way to
-                    showcase the power of generosity and giving.
+                In Pakistan, many families struggle to make ends meet and provide basic necessities like clothing for their loved ones. If you have gently used clothes that you no longer need, consider donating them to those in need. At our organization, we promise to take your donated clothes and distribute them directly to those who are in need, ensuring that they reach the hands of the people who need them the most. Your contribution can make a significant difference in the lives of those who are less fortunate, providing them with warmth, comfort, and dignity. By working together, we can make a positive impact in our communities and help create a brighter future for all.
 
                     <br><br>
-                    Lastly—and this is a big one—donating helps build a vital trait in all people in helping them to
-                    become more generous. Rather than living a selfish life, people who donate clothes are taking steps
-                    to become less selfish and more keyed in on growing and improving their generous nature. It’s a
-                    trait that everyone should have and should work to grow—no matter how old they are.
-
-                    If you want to start donating more clothes and living generously, make sure that you’re donating to
-                    a reputable organization. GreenDrop partners with four different charitable organizations that focus
-                    on helping others. When you schedule a clothes donation with us, you know it’s going to make a
-                    difference. Schedule a pick-up now!
+                    At times, disasters can strike unexpectedly, leaving communities in dire need of basic necessities such as food, water, and shelter. In such situations, access to clean clothes can often be overlooked, but it is just as important for maintaining dignity and health. We at Vitalshare believe in the power of community and the importance of helping those in need. That's why we've made it our mission to collect and distribute clothes to those who need them most. With your support, we can make a difference in the lives of those affected by disaster and poverty. Together, we can bring hope and comfort to those who need it most.
                 </p>
             </div>
             <div class="col-md-6">

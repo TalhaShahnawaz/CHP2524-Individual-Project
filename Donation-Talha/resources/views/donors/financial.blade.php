@@ -39,12 +39,13 @@
             <div class="container-fluid">
                 <div class="row align-items-center">
                     <div class="col-xl-3 col-lg-3">
-                        <div class="logo">
-                            <a href="{{url('/')}}">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div>
+  <div class="logo">
+    <a href="{{url('/')}}">
+      <img src="img/logo.png" alt="" style="display: inline-block; vertical-align: middle;">
+      <span style="display: inline-block; vertical-align: middle; " class="logo-t">VitalShare</span>
+    </a>
+  </div>
+</div>
                     <div class="col-xl-9 col-lg-9">
                         <div class="main-menu">
                             <nav>
@@ -86,24 +87,26 @@
                                     
                                     <li><a href="{{url('mentalwellbeing')}}">Mental Well-Being</a></li>
                                     <li><a href="/about">About</a></li>
-                                    <!-- -->
+                                     <!-- -->
                                     @if (Route::has('login'))
                                 
                                     @auth
                                     
                                     @if (Auth::check() && Auth::user()->role_id == 'admin')
 
-                                    <li style="background-color: white;" ><a href="{{ url('/adminProfile') }}" style="color: black;">Dashboard</a></li>
+                                    <li style="background-color: white; border-radius: 25px;;" ><a href="{{ url('/adminProfile') }}" style="color: black; border-radius: 25px; display: block; padding: 10px">Dashboard</a></li>
                                     @endif
-                                    <li style="background-color: white;"  <form action="{{ url('/logout') }}" method="POST">
+                                    <li style="background-color: white; border-radius: 25px;;" > <form action="{{ url('/logout') }}" method="POST" >
                                 @csrf
                                 <button type="submit" class="logout-btn">Logout</button>
-                                </form>    </li>    @else
-                            <li style="background-color: white;" > <a href="{{ route('login') }}" style="color: black;">Log in</a></li>
+                                </form>        @else
+                                <li style="background-color: white; border-radius: 25px;">
+                                <a href="{{ route('login') }}" style="color: black; border-radius: 25px; display: block; padding: 10px;">Log in</a>
+                                </li>
 
                                     @if (Route::has('register'))
-                                    <li style="background-color: white;">
-                                        <a href="{{ route('register') }}" style="color: black;">Register</a>
+                                    <li style="background-color: white; border-radius: 25px;">
+                                        <a href="{{ route('register') }}" style="color: black; border-radius: 25px; display: block; padding: 10px;">Register</a>
                                         </li>
                                     @endif
                                     @endauth

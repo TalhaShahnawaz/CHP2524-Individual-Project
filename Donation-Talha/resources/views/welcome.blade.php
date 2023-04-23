@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Laravel</title>
+    <title>VitalShare</title>
 
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
 </head>
 
 <body>
-   
+
 
     <header>
          
@@ -51,13 +51,14 @@
         <div id="sticky-header" class="main-header-area">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-xl-3 col-lg-3">
-                        <div class="logo">
-                            <a href="{{url('/')}}">
-                                <img src="img/logo.png" alt="">
-                            </a>
-                        </div>
-                    </div>
+                <div class="col-xl-3 col-lg-3">
+  <div class="logo">
+    <a href="{{url('/')}}">
+      <img src="img/logo.png" alt="" style="display: inline-block; vertical-align: middle;">
+      <span style="display: inline-block; vertical-align: middle; " class="logo-t">VitalShare</span>
+    </a>
+  </div>
+</div>
                     <div class="col-xl-9 col-lg-9">
                         <div class="main-menu">
                             <nav>
@@ -106,17 +107,19 @@
                                     
                                     @if (Auth::check() && Auth::user()->role_id == 'admin')
 
-                                    <li style="background-color: white;" ><a href="{{ url('/adminProfile') }}" style="color: black;">Dashboard</a></li>
+                                    <li style="background-color: white; border-radius: 25px;;" ><a href="{{ url('/adminProfile') }}" style="color: black; border-radius: 25px; display: block; padding: 10px">Dashboard</a></li>
                                     @endif
-                                    <li style="background-color: white;" > <form action="{{ url('/logout') }}" method="POST" >
+                                    <li style="background-color: white; border-radius: 25px;;" > <form action="{{ url('/logout') }}" method="POST" >
                                 @csrf
                                 <button type="submit" class="logout-btn">Logout</button>
                                 </form>        @else
-                            <li style="background-color: white;" > <a href="{{ route('login') }}" style="color: black;">Log in</a></li>
+                                <li style="background-color: white; border-radius: 25px;">
+                                <a href="{{ route('login') }}" style="color: black; border-radius: 25px; display: block; padding: 10px;">Log in</a>
+                                </li>
 
                                     @if (Route::has('register'))
-                                    <li style="background-color: white;">
-                                        <a href="{{ route('register') }}" style="color: black;">Register</a>
+                                    <li style="background-color: white; border-radius: 25px;">
+                                        <a href="{{ route('register') }}" style="color: black; border-radius: 25px; display: block; padding: 10px;">Register</a>
                                         </li>
                                     @endif
                                     @endauth
@@ -143,16 +146,14 @@
 
     {{-- image slideer --}}
     <div class="slider_area">
-        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2">
+        <div class="single_slider  d-flex align-items-center slider_bg_1 overlay2a">
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9">
                         <div class="slider_text ">
-                            <span>Get Started Today.</span>
-                            <h3> Help the children
-                                When They Need</h3>
-                            <p>With so much to consume and such little time, coming up <br>
-                                with relevant title ideas is essential</p>
+                            <span>Welcome</span>
+                            <h3> VitalShare brings Donation and Treatment at One Place</h3>
+                            <p>Pakistan is Facing All kind of Issues, You can make a difference</p>
                             <a href="/about" class="boxed-btn3">Learn More
                             </a>
                         </div>
@@ -174,8 +175,8 @@
                                 <i class="flaticon-calendar"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
+                                <h3 class="counter">100</h3>
+                                <p>Donations Recieved</p>
                             </div>
                         </div>
                     </div>
@@ -185,8 +186,8 @@
                                 <i class="flaticon-heart-beat"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
+                                <h3 class="counter">80</h3>
+                                <p>patients Treated</p>
                             </div>
                         </div>
                     </div>
@@ -196,8 +197,8 @@
                                 <i class="flaticon-in-love"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
+                                <h3 class="counter">50</h3>
+                                <p>Blood Transfusions</p>
                             </div>
                         </div>
                     </div>
@@ -207,8 +208,8 @@
                                 <i class="flaticon-hug"></i>
                             </div>
                             <div class="events">
-                                <h3 class="counter">120</h3>
-                                <p>Finished Event</p>
+                                <h3 class="counter">40</h3>
+                                <p>Mental Wellbeing Sessions</p>
                             </div>
                         </div>
                     </div>
@@ -219,84 +220,39 @@
     <!-- counter_area_end  -->
 
     {{-- body --}}
-    <div class="container-fluid mt-5 mb-5 bg-indigo-100">
-        <div class="row mx-5">
-            
-
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/event.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="{{url('events')}}" class="card-text btn btn-outline-success">Events</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/camp.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-success">Campaigns</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/sdg.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-success">Goals</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
-            
-            <div class="row my-5 mx-5">
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/auction.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-success">Help Us</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="card" style="width: 25rem;">
-                    <img src="img/Patient.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <a href="" class="card-text btn btn-outline-success">Patients</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 
     <div class="container">
         <div class="row mt-5">
-            <div class="col-md-6">
+            <div class="col-md-8">
                 <img src="{{ asset('img/support.png')}}" alt="">
             </div>
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="mt-4 ml-4">
+                <div class="my-5">
+                        <a href="#" class="btn btn-success text-gray-900">Our Impact</a>
+                    </div>
                     <div class="vl bg-success"></div>
-                    <p class="fw-bold fs-1">Helping others is the </p>
-                    <p class="fw-bold fs-1">way of help ourselves</p>
+                    <p class="fw-bold fs-1">Helping others is the Way.... </p>
+                    <p class="fw-bold fs-1">To Actually Help Ourselves...</p>
                     <div class="mt-5">
                         <p class="fw-light fs-4">
                             The purpose of life is not to be happy. It is to be useful, to be honorable, to be
                             compassionate, to have it make some difference that you have lived and lived well.
+                            <br>
+                            
                         </p>
+                        
                     </div>
-                    <div class="my-5">
-                        <a href="#" class="btn btn-success text-gray-900">Our Impact</a>
-                    </div>
+                    
+                    
                 </div>
+                
             </div>
+            
         </div>
     </div>
-
+    
   
 
     {{-- Sponser Ship --}}
@@ -306,9 +262,9 @@
                 <div class="card bg-dark text-white">
                     <img class="card-img img_opacity" src="{{ asset('img/Sponsr.jpg')}}" alt="Card image">
                     <div class="card-img-overlay">
-                        <p class="card-text sponsr_text text-center text-gray-900 mt-48">Supported People</p>
+                        <p class="card-text sponsr_text text-center text-gray-900 mt-48">Our Supported People</p>
                         <p class="card-text text-center mt-10 text-dark font-weight-light fs-4">There is nothing more
-                            beautiful than someone who goes out of their way to make life beautiful for others</p>
+                            beautiful than <b>SOMEONE</b> who goes out of their way to make life beautiful for <b>OTHERS</b></p>
 
                        
                     </div>
@@ -324,32 +280,16 @@
             <div class="col-md-6">
                 <div class="mt-4 ml-4">
                     <div class="vl bg-success"></div>
-                    <p class="fw-bold fs-1">Find in our Blog </p>
+                    <p class="fw-bold fs-1"><b>Find more About Us</b> </p>
                     <div class="mt-5">
-                        <p class="fw-light fs-6 text-left">
-                            It may be a platform for fundraising rather than a charity in its own right, but
-                            dealing with thousands of causes daily, Just Giving’s blog is a wealth of
-                            information and inspiration. For anyone considering launching a fundraising
-                            campaign, Just Giving‘s posts are full of ideas and tip to help you maximise the
-                            amount you raise. For everyone else, the blog is full of great stories and
-                            initiatives worth knowing about.
-                        </p>
-
-                        <p class="fw-light fs-6 text-left">
-                            With so much bad news in the world today, from global disasters to national budget
-                            cuts, sometimes it’s good to be reminded that not everything out there is terrible.
-                            In fact, there’s a lot going on across the globe and country which is truly great –
-                            but receives little attention.
-                            To help you look on the brighter side, and to inspire you to “be the change you want
-                            to see”, we’ve collected five of our very favourite charity blogs.
-                            <br>
-                            From national charities with very specific causes, to larger initiatives with
-                            broader intentions.
-                        </p>
+                    <p class="fw-light fs-6 text-left">
+    Our website is a platform for individuals and organizations to donate food, clothing, money, and blood to those in need. We also provide information and support for mental health. Our goal is to make it easy for people to help others and create a positive impact in the world. Whether you want to give back to your community or support a specific cause, our website offers a simple and secure way to make a difference.
+</p>
+<p class="fw-light fs-6 text-left">
+    With so many challenges being faced by Pakistan, it's important to remember that there are still good things happening every day. Our website is dedicated to working with charities and organizations around the world. We believe that by sharing these stories, we can inspire more people to get involved and make a difference in their own communities. Whether you're interested in donating, volunteering, or simply learning more about the causes we support, our website has something for everyone.
+</p>
                     </div>
-                    <div class="my-5">
-                        <a href="#" class="btn btn-success text-gray-900">Read More</a>
-                    </div>
+                    
                 </div>
             </div>
             <div class="col-md-6">
@@ -359,195 +299,7 @@
     </div>
     {{-- End of Home Blog --}}
 
-    <!-- latest_activites_area_start  -->
-    <div class="latest_activites_area">
-        <div class=" video_bg_1 video_activite  d-flex align-items-center justify-content-center">
-            <a class="popup-video" href="https://www.youtube.com/watch?v=MG3jGHnBVQs">
-                <i class="flaticon-ui"></i>
-            </a>
-        </div>
-        <div class="container">
-            <div class="row justify-content-end">
-                <div class="col-lg-7">
-                    <div class="activites_info">
-                        <div class="section_title">
-                            <h3> <span>Watch Our Latest Activities</span><br>
-                                </h3>
-                        </div>
-                        <p class="para_1">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
-                            eiusmod tempor incididunt ut labore dolore magna aliqua.
-                            enim minim veniam, quis nostrud exercitation.</p class="para_1">
-                        <p class="para_2">Lorem ipsum dolor sit amet, consectetur adipisicing elit sed do
-                            eiusmod tempor incididunt ut labore dolore magna aliqua.
-                            enim minim veniam, quis nostrud exercitation. tempor
-                            incididunt ut labore dolore magna aliqua. enim minim
-                            veniam, quis nostrud exercitation.</p>
-                        <a href="{{url('mentalwellbeing')}}" class="boxed-btn4">Donate Now</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- latest_activites_area_end  -->
-
-    <!-- popular_causes_area_start  -->
-    <div class="popular_causes_area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>Popular Causes</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="causes_active owl-carousel">
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/1.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;"
-                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: &#163 5000.00 </span>
-                                    <span>Goal:  &#163 9000.00 </span>
-                                </div>
-                                <h4>Help us to Provide Food</h4>
-                                <p>The passage is attributed to an
-                                    unknown typesetter in the century
-                                    who is thought</p>
-                            </div>
-                        </div>
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/2.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;"
-                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: &#163 5000.00 </span>
-                                    <span>Goal:  &#163 9000.00 </span>
-                                </div>
-                                <h4>Clothes For Everyone</h4>
-                                <p>The passage is attributed to an
-                                    unknown typesetter in the century
-                                    who is thought</p>
-                            </div>
-                        </div>
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/3.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;"
-                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: &#163 5000.00 </span>
-                                    <span>Goal:  &#163 9000.00 </span>
-                                </div>
-                                <h4>Water For All Children</h4>
-                                <p>The passage is attributed to an
-                                    unknown typesetter in the century
-                                    who is thought</p>
-                               
-                            </div>
-                        </div>
-                        <div class="single_cause">
-                            <div class="thumb">
-                                <img src="img/causes/1.png" alt="">
-                            </div>
-                            <div class="causes_content">
-                                <div class="custom_progress_bar">
-                                    <div class="progress">
-                                        <div class="progress-bar" role="progressbar" style="width: 30%;"
-                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100">
-                                            <span class="progres_count">
-                                                30%
-                                            </span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="balance d-flex justify-content-between align-items-center">
-                                    <span>Raised: &#163 5000.00 </span>
-                                    <span>Goal:  &#163 9000.00 </span>
-                                </div>
-                                <h4>Help us to Send Food</h4>
-                                <p>The passage is attributed to an
-                                    unknown typesetter in the century
-                                    who is thought</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- popular_causes_area_end  -->
-
-    <!-- news__area_start  -->
-    <div class="news__area section_padding">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-lg-6">
-                    <div class="section_title text-center mb-55">
-                        <h3><span>News & Updates</span></h3>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="news_active owl-carousel">
-                        <div class="single__blog d-flex align-items-center">
-                            <div class="thum">
-                                <img src="img/news/1.png" alt="">
-                            </div>
-                            <div class="newsinfo">
-                                <span>January 18, 2023</span>
-                                <a href="single-blog.html">
-                                    <h3>Pure Water Is More
-                                        Essential</h3>
-                                </a>
-                                <p>The passage experienced a
-                                    surge in popularity during the
-                                    1960s when used it on their
-                                    sheets, and again.</p>
-                                <a class="read_more" href="{{url('/news')}}">Read More</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a href="{{url('/news')}}" class="btn btn-success my-4">Read More</a>
-        </div>
-    </div>
-    <!-- news__area_end  -->
+    
 
     {{-- Sign Up to Hear from us --}}
     <div class="container-fluid bg-green-300">
@@ -561,29 +313,31 @@
                         <form action="" method="POST">
                             @csrf
                             <div class="mb-3">
+                            <label for="first_name" class="form-label">First Name: </label>
                                 <input type="text" name="subFirst" placeholder="First Name" class="form-control"
                                     id="first_name" required>
-                                <label for="first_name" class="form-label">First Name: </label>
+                                
                             </div>
                     </div>
                     <div class="col-sm-2">
                         <div class="mb-3">
+                        <label for="first_name" class="form-label">Last Name: </label>
                             <input type="text" name="subLast" placeholder="Last Name" class="form-control"
                                 id="first_name" required>
-                            <label for="first_name" class="form-label">Last Name: </label>
+                            
                         </div>
                     </div>
                     <div class="col-sm-3">
                         <div class="mb-3">
+                        <label for="first_name" class="form-label">E-mail: </label>
                             <input type="email" name="subEmail" placeholder="example@mail.com" class="form-control"
                                 id="first_name" required>
-                            <label for="first_name" class="form-label">E-mail: </label>
+                            
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-6">
-                            <button type="submit" class="btn btn-success text-dark" style="width: 18rem">Sign
-                                in</button>
+                            <button type="submit" class="btn btn-success text-dark" style="width: 18rem">Submit</button>
                         </div>
                     </div>
                     </form>
@@ -605,13 +359,15 @@
                 <div class="row">
                     <div class="col-xl-4 col-md-6 col-lg-4 ">
                         <div class="footer_widget">
-                            <div class="footer_logo">
-                                <a href="#">
-                                    <img src="img/footer_logo.png" alt="">
-                                </a>
-                            </div>
-                            <p class="address_text">Lorem ipsum dolor sit amet, <br> consectetur adipiscing elit, sed do
-                                <br> eiusmod tempor incididunt ut labore.
+                        <div class="logo">
+    <a href="{{url('/')}}">
+      <img src="img/footer_logo.png" alt="" style="display: inline-block; vertical-align: middle;">
+      <span style="display: inline-block; vertical-align: middle; " class="logo-u">VitalShare</span>
+    </a>
+  </div>
+                            
+                            <p class="address_text">Vitalshare is Created in Laravel <br> with Love to Spread in the
+                                <br> World.....
                             </p>
                             <div class="socail_links">
                                 <ul>
@@ -646,49 +402,21 @@
                                 Services
                             </h3>
                             <ul class="links">
-                                <li><a href="#">Donate</a></li>
-                                <li><a href="#">Fundraise</a></li>
-                                <li><a href="#">Services</a></li>
+
+                                <li><a href="{{url('financial')}}">Donate</a></li>
+                                <li><a href="/patient">For Patients</a></li>
+                                <li><a href="{{url('mentalwellbeing')}}">Mental Wellbeing</a></li>
                                 
-                            </ul>
+			</ul>
                         </div>
                     </div>
                     
                     <div class="col-xl-3 col-md-6 col-lg-3">
                         <div class="footer_widget">
                             <h3 class="footer_title">
-                                Top News
+                                Privacy Policy
                             </h3>
-                            <ul class="news_links">
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="img/news/news_1.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>School for African
-                                                Childrens</h4>
-                                        </a>
-                                        <span>Jun 12, 2019</span>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="thumb">
-                                        <a href="#">
-                                            <img src="img/news/news_2.png" alt="">
-                                        </a>
-                                    </div>
-                                    <div class="info">
-                                        <a href="#">
-                                            <h4>School for African
-                                                Childrens</h4>
-                                        </a>
-                                        <span>Jun 12, 2019</span>
-                                    </div>
-                                </li>
-                            </ul>
+                            <p class="address_text">We use cookies and other identifiers to help improve your online experience. By using our website you are agreeing to this.</p>
                         </div>
                     </div>
                 </div>
@@ -701,7 +429,7 @@
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
                             <p class="text-center ">
-                                Copyright &copy; 
+                                Copyright &copy; VitalShare
                                 <script>
                                     document.write(new Date().getFullYear());
                                 </script>
